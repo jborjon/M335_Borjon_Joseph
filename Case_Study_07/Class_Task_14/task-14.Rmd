@@ -1,0 +1,36 @@
+---
+title: "Task 14: Counting Words and Occurrences"
+author: "Joseph Borjon"
+date: "June 7, 2018"
+output:
+  html_document:
+    keep_md: true
+    toc: true
+    toc_float: true
+    code_folding: hide
+    fig_height: 6
+    fig_width: 12
+    fig_align: "center"
+---
+
+```{r setup, echo=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
+knitr::read_chunk("word-summaries.r")
+knitr::read_chunk("bofm-word-dist-by-verse.r")
+```
+
+```{r word_summaries}
+```
+
+## Average verse lengths in the New Testament and the Book of Mormon
+
+According to the output of my R script, verses in the **New Testament** contain an average of 22.71 words, while verses in **The Book of Mormon** contain nearly double that amount, at 40.51 words.
+
+## Instances of the word "Jesus" in the New Testament and the Book of Mormon
+
+The word "Jesus" appears 7,957 times in the **New Testament** out of a total of 180,665 words, and 6,604 times in **The Book of Mormon** out of a total 267,519 of words. This may not be a good metric, since the Savior is referred to by many other names in all books of scripture.
+
+## Word counts in each Book of Mormon verse
+
+```{r bofm_word_dist_by_verse}
+```

@@ -1,0 +1,43 @@
+---
+title: "Case Study 5: Male Height Over the Years"
+author: "Joseph Borjon"
+date: "May 26, 2018"
+output:
+  html_document:
+    keep_md: true
+    toc: true
+    toc_float: true
+    code_folding: hide
+    fig_height: 6
+    fig_width: 12
+    fig_align: "center"
+---
+
+```{r setup, echo=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
+knitr::read_chunk("worldwide-male-height.r")
+knitr::read_chunk("height-across-centuries.r")
+```
+
+## Changes in Male Height Throughout the World
+
+Since the mid-19th century and through 1980, male heights across the world have trended upward by just over 1.5 inches. Germany, in particular, is an interesting case, since its height measurements have grown at a higher rate than those of most of the rest of the world.
+
+```{r worldwide_male_height}
+```
+
+## Comparison Between Height Studies
+
+This second graph makes the limmitations of the data much more evident: each study spans much less time than one may initially presume. While the timelines of the studies have enough overlap that all years in the range are covered, they are not covered equally. Furthermore, the studies are localized, leaving the reader to wonder how well the data from one side of the world correlates with those of another. Is the continuity we see in the chart also seen in reality?
+
+```{r height_across_centuries}
+```
+
+Because the data from the BLS data is so hard to see in the graphic above, given that only one assumed year is represented, here it is on its own:
+
+```{r bls_height}
+```
+
+## Conclusion: I Want More Data
+
+While it seems that humans---or human males, at least---may have been getting taller in the past few centuries, I would like to see data dating back thousands of years. Are we currently in the middle of a super-cycle that sees humans growing and shrinking over the millenia? I've wondered about this for years. I'm not likely ever to have an answer.

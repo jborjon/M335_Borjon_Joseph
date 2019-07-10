@@ -1,0 +1,46 @@
+---
+title: "Taks 5 Plots"
+author: "Joseph Borjon"
+date: "May 8, 2018"
+output:
+  html_document:
+    keep_md: true
+---
+
+## Bad graph example
+
+In this chart I didn't bother to make the y-axis correspond with readable numbers. I'm also assuming my brother is not a cheapskate and doesn't want to spend less than $500 so I start the y-axis there -- a big no-no with bar charts (although ggplot is still rendering the bottom for some reason). I didn't bother making the chart look good. The title and labels are not explicative.
+
+```{r bad_graph, echo=FALSE, message=FALSE}
+library(tidyverse)
+
+# Bad plot
+diamonds %>%
+  ggplot(aes(x = cut, y = price)) +
+  labs(title = "Price vs. cut quality") +
+  geom_bar(stat = "identity", fill = "darkblue") +
+  scale_y_continuous(limits = c(500, NA)) +
+  theme_bw()
+```
+
+## Better graph example
+
+In this graph, I've attempted to show weight, cut, and depth for each relevant diamond (meaning under $2,000). That reveals that the better cuts tend to be more expensive at lower carats. The depth doesn't seem to have much relevance. The line in the center of the plot reveals that price is quite linear.
+
+```{r good_graph, echo=FALSE, message=FALSE}
+# Good plot
+diamonds %>%
+  ggplot(aes(x = price, y = carat, color = cut, size = depth)) +
+  labs(
+    title = "Diamond price increases almost linearly with weight",
+    subtitle = "Increase rate may change at higher prices; lots of ideal cuts at the bottom and fair at the top.",
+    x = "Price (US$)",
+    y = "Weight (carats)",
+    color = "Cut",
+    size = "Depth (mm)"
+  ) +
+  geom_jitter() +
+  geom_smooth(color = "blue", size = 1) +
+  coord_cartesian(xlim = c(0.15, 2000), ylim = c(0, 1.25)) +
+  theme_bw()
+```

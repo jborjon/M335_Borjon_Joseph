@@ -1,0 +1,12 @@
+name: deleteme
+title: deleteme
+username: jborjon
+account: jborjon
+server: shiny.byui.edu
+hostUrl: https://shiny.byui.edu/__api__
+appId: 257
+bundleId: 438
+url: https://shiny.byui.edu/content/257/
+when: 1529447210.79712
+asMultiple: FALSE
+asStatic: TRUE

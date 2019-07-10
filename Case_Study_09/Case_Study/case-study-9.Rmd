@@ -1,0 +1,38 @@
+---
+title: "Case Study 9: Interacting with time"
+author: "Joseph Borjon"
+date: "June 25, 2018"
+output:
+  html_document:
+    keep_md: true
+    toc: true
+    toc_float: true
+    code_folding: hide
+    fig_height: 6
+    fig_width: 12
+    fig_align: "center"
+---
+
+```{r setup, echo=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
+knitr::read_chunk("wrangle.R")
+knitr::read_chunk("plot-closing-prices.R ")
+knitr::read_chunk("plot-price-vs-volume.R")
+```
+
+```{r wrangle}
+```
+
+## Five-year closing price history
+
+The following charts show the closing price for each stock every trading day for the last 5 years. The price scale goes from 0 to the maximum price in the entire dataset to ensure a common y-axis scale.
+
+```{r plot_closing_prices}
+```
+
+## Does a higher trading volume produce a lower stock price?
+
+The following chart uses the same 5-year history data to visualiize the correlation between trading volume and stock price. Closing prices were used for this chart as well.
+
+```{r plot_price_vs_volume, fig.height=24}
+```

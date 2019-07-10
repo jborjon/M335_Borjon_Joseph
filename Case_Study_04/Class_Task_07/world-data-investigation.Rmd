@@ -1,0 +1,30 @@
+---
+title: "Task 7: World Data Investigation"
+author: "Joseph Borjon"
+date: "May 15, 2018"
+output:
+  html_document:
+    keep_md: true
+---
+
+## Child mortality reduction
+
+From the following visualization, it is stunningly evident that, the more a country spends on healthcare as a percentage of GDP, the fewer child deaths occur between the ages of 0 and 5.
+
+```{r healthcare_data, echo = FALSE, message = FALSE, results = "hide"}
+library(dplyr)
+library(ggplot2)
+library(ourworldindata)
+
+financing_healthcare %>%
+  filter(year == 2010, !is.na(child_mort), !is.na(health_exp_total)) %>%
+  ggplot(aes(health_exp_total, child_mort, color = continent)) +
+    geom_point() +
+    labs(
+      title = "Child mortality decreases drastically as health expenditure increases",
+      x = "Total Healthcare expenditure as % of GDP",
+      y = "Child mortalityper 1,000",
+      color = "Continent"
+    ) +
+    scale_color_brewer(palette = "Set1")
+```

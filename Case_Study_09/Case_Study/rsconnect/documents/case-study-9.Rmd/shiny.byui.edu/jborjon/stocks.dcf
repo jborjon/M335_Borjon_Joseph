@@ -1,0 +1,12 @@
+name: stocks
+title: Stocks
+username: jborjon
+account: jborjon
+server: shiny.byui.edu
+hostUrl: https://shiny.byui.edu/__api__
+appId: 309
+bundleId: 515
+url: https://shiny.byui.edu/content/309/
+when: 1530051474.39811
+asMultiple: FALSE
+asStatic: FALSE

@@ -1,0 +1,82 @@
+---
+title: "Task 10: Clean and Reformat"
+author: "Joseph Borjon"
+date: "May 24, 2018"
+output:
+  html_document:  
+    keep_md: true
+    code_folding: hide
+    fig_height: 6
+    fig_width: 12
+    fig_align: "center"
+---
+
+```{r, echo=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
+```
+
+```{r load_libraries, include=FALSE}
+library(tidyverse)
+library(downloader)
+library(knitr)
+```
+
+```{r load_data}
+# Save a local temp file to avoid overloading the server
+url_csv <- "https://raw.githubusercontent.com/byuistats/data/master/Dart_Expert_Dow_6month_anova/Dart_Expert_Dow_6month_anova.csv"
+data_file <- tempfile()
+download(url_csv, data_file, mode = "wb")
+
+stock_returns <- read_csv(data_file) %>%
+  separate(contest_period, into = c("period", "year_end"), sep = -4, convert = TRUE) %>%
+  separate(period, into = c("month_start", "month_end"), convert = TRUE)
+
+write_rds(stock_returns, "stock-returns.Rds", compress = "none")
+```
+
+```{r plot_6_month_periods}
+stock_returns %>%
+  group_by(month_end, year_end) %>%
+  summarise(avg_return = mean(value)) %>%
+  ggplot(aes(month_end, avg_return)) +
+  geom_bar(stat = "identity", fill = "darkblue") +
+  labs(
+    title = "Average Returns on (Almost) Every 6-Month Period Between 1990 and 1998 Across Indices",
+    x = "Period end",
+    y = "Average return"
+  ) +
+  facet_wrap(~ year_end, ncol = 3) +
+  theme_bw()
+```
+
+```{r plot_spread}
+stock_returns %>%
+  ggplot(aes(month_end, value, color = variable)) +
+  geom_point() +
+  geom_line(aes(group = variable)) +
+  labs(
+    title = "DJIA Returns Are Generally Tighter than DARTS and PROS",
+    x = "Period end",
+    y = "Return"
+  ) +
+  facet_wrap(~ year_end, ncol = 3) +
+  theme_bw()
+```
+
+```{r stock_returns_table}
+stock_returns %>%
+  select(-month_start) %>%
+  spread(key = year_end, value = value) %>%
+  kable(
+    col.names = c("End month", "Index", 1990, 1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998),
+    caption = "Returns per six-month period"
+  )
+```
+
+## Conclusion
+
+I averaged the returns of all the indices for the bar chart because otherwise they would have been stacked, which would have shown the sum of them all and skewed the representation.
+
+DJIA returns are indeed less volatile than those of its counterparts, as we can see from the line/point plot. However, within each 6-month period there isn't much of an upward trend. Stock returns have remained relatively consistent over the years.
+
+There are quite a few missing data points, which is easy to see in the spread table and the bar chart but not so much in the original table.

@@ -1,0 +1,26 @@
+---
+title: "Task 18: The US Grocer (KR)"
+author: "Joseph Borjon"
+date: "June 21, 2018"
+output:
+  html_document:
+    keep_md: true
+    code_folding: hide
+    fig_height: 6
+    fig_width: 10
+    fig_align: "center"
+---
+
+```{r setup, echo=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
+knitr::read_chunk("task-18.r")
+```
+
+## Kroger's 10-year stock price history
+
+The following plot reveals two extreme periods: the low between early 2009 and mid 2012 during the Great Recession, and the boom between late 2012 and mid 2017. From the window we have for viewing, it appears that current prices are much better than they were pre-recession. Because of this interesting dynamic, I decided to keep the 10-year history rather than only showing 5 years.
+
+The `fig_width` had to be adjusted to 10 in the YAML header of the file for the chart to fit (almost) properly on the page. The gridlines were kept but in a lighter gray so as to keep the eye focused on the data. The highest and lowest price points were labeled because people would naturally wonder, and mousing over the specific point is hard. I filled the area under the line because it looks more eye-catching, although I'm not sure that's appropiate for this use case.
+
+```{r plot_kr}
+```

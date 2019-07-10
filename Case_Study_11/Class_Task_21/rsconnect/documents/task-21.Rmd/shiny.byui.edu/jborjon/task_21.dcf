@@ -1,0 +1,12 @@
+name: task_21
+title: Task 21
+username: jborjon
+account: jborjon
+server: shiny.byui.edu
+hostUrl: https://shiny.byui.edu/__api__
+appId: 351
+bundleId: 596
+url: https://shiny.byui.edu/content/351/
+when: 1531854858.74148
+asMultiple: FALSE
+asStatic: TRUE

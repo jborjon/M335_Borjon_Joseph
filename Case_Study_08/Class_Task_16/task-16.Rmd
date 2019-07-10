@@ -1,0 +1,37 @@
+---
+title: "Task 16: Does the weather hurt my bottom? Line, that is?"
+author: "Joseph Borjon"
+date: "June 14, 2018"
+output:
+  html_document:
+    keep_md: true
+    toc: true
+    toc_float: true
+    code_folding: hide
+    fig_height: 6
+    fig_width: 12
+    fig_align: "center"
+---
+
+```{r setup, echo=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
+knitr::read_chunk("car-wash-temperature.r")
+```
+
+## Is there a correlation between car detailing sales and outside temperature?
+
+These two plots show little to no growth in hourly sales for Splash and Dash over the course of the semester. Temperatures trended upward throughout the semester while sales did not.
+
+Please note that negative revenue values were included in the plots since they were likely promotions and other calculated (or accidental) losses.
+
+```{r semester_plots}
+```
+
+### Sales vs.temperature
+
+This last plot shows an interesting trend: sales tended to be higher at temperatures between ~55 and ~75 degrees.
+
+(Note from class discussion by Brother Hathaway: this graph is confounding temperature with time of day because the peak time for car washes, late morning to mid-afternoon, is also when temperatures tend to be warmest.)
+
+```{r temperature_vs_sales_plot}
+```

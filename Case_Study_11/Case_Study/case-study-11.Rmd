@@ -1,0 +1,28 @@
+---
+title: "Case Study 11: Interacting with space"
+author: "Joseph Borjon"
+date: "July 17, 2018"
+output:
+  html_document:
+    keep_md: true
+    code_folding: hide
+    fig_height: 6
+    fig_width: 9
+    fig_align: "center"
+---
+
+```{r setup, echo=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
+knitr::read_chunk("plot-earthquakes.r")
+```
+
+## Seismic activity (magnitude > 2.5) in North America between June 17 and July 17, 2018
+
+Dot size represents the magnitude (smaller is lower). Since there have been no major earthquakes 
+
+California and its county boundaries are highlighted because that area is by far the most interesting. I'm looking at you, San Francisco and LA.
+
+```{r plot_earthquakes}
+```
+
+Source: [USGS Earthquake Hazards Program](https://earthquake.usgs.gov/earthquakes/search)

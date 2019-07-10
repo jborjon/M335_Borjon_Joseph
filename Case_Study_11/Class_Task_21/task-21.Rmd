@@ -1,0 +1,24 @@
+---
+title: "Task 21: Interactive Maps"
+author: "Joseph Borjon"
+date: "July 17, 2018"
+output:
+  html_document:
+    keep_md: true
+    toc: true
+    toc_float: true
+    code_folding: hide
+    fig_height: 5
+    fig_width: 8
+    fig_align: "center"
+---
+
+```{r setup, echo=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
+knitr::read_chunk("task-21.r")
+```
+
+## Task 19 Map Recreation
+
+```{r us_map}
+```

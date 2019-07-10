@@ -1,0 +1,61 @@
+---
+title: "Case Study 6: The collapse of construction in Idaho"
+author: "Joseph Borjon"
+date: "June 5, 2018"
+output:
+  html_document:
+    keep_md: true
+    toc: true
+    toc_float: true
+    code_folding: hide
+    fig_height: 6
+    fig_width: 12
+    fig_align: "center"
+---
+
+```{r setup, echo=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
+knitr::read_chunk("wrangle.r")
+knitr::read_chunk("full-vs-quick-plot.r")
+knitr::read_chunk("food-vs-commerce-plot.r")
+knitr::read_chunk("fast-food-county-plot.r")
+knitr::read_chunk("ada-county-construction-plot.r")
+```
+
+## Background
+
+It is 2010, and you are working for the Idaho restaurant commission, and they need your help getting a clearer picture of how restaurant construction changed across Idaho from 2008 to 2009. They provided you a dataset of all commercial construction in Idaho for those two years. The data has a variable Type with a general category called Food_Beverage_Service that has other buildings besides restaurants in the category. You will need to use the restaurant names (see restaurants data object) and some additional key words to create the correct subgroupings. Your client expects to provide new data for 2010 and 2011 so your script needs to do the work. Make sure you do not use Excel to manipulate anything.
+
+  1. How did full-service restaurant construction compared to quick service restaurant construction across county and years?
+  1. How did restaurant construction fare compare to the other commercial construction in Idaho?
+  1. Which county in Idaho spent the most on fast food construction each year?
+  1. In that county, how did other commercial construction compare?
+
+## Idaho Food Service Construction
+
+```{r wrangle_data}
+```
+
+### Full- vs. quick-service restaurant construction
+
+```{r full_vs_quick_plot}
+```
+
+For both types of services, construction decreased---sometimes down to zero---in all counties but Twin Falls. Where there was no construction in 2008, there was none in 2009 either (again, with the single-restaurant exception in Twin Falls).
+
+### Restaurant vs. other commercial construction
+
+```{r food_vs_commerce_plot}
+```
+
+Food and beverage construction went down along with the entire commercial construction in Idaho at a similar rate.
+
+### Fast-food construction by county
+
+```{r fast_food_county_plot}
+```
+
+```{r ada_county_construction_plot}
+```
+
+It is interesting that quick-service construction decreased by only one from 2008 to 2009, while other commercial construction in general decreased by a much higher percentage.

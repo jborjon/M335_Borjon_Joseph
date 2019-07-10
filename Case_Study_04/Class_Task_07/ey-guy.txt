@@ -1,0 +1,3 @@
+Travis Bush: travis.bush@ey.com
+
+Often, we get lost in how the client wants to solve the problem rather than doing what I need to do to solve the client's problem. If they want the solution in Excel, fine, but I don't have to use Excel; I can do it in R and export it back into Excel.

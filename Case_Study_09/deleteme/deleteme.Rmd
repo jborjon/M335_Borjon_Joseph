@@ -1,0 +1,15 @@
+---
+title: "Hello. My name is Inigo Montoya."
+author: "Joseph Borjon"
+date: "June 19, 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(DT)
+datatable(iris, class = "cell-border", extensions = c("Buttons", "Responsive"))
+```
