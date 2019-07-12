@@ -247,7 +247,7 @@ To see a summary plot of all the used variables, see near the end.
 
 ## So, what's the answer?
 
-Seeing the counties where school-age children committed suicide, at at what rates, should begin to answer the question:
+Seeing the counties where school-age children committed suicide, and at what rates, should begin to answer the question:
 
 
 ```r
